@@ -1,0 +1,52 @@
+### buscar todas as informações de todos os usuários
+GET http://localhost:3000/user/
+
+### buscar informações de um usuário pelo ID
+GET http://localhost:3000/user/5d84ac9f-0c60-4c41-b84f-c63dfa1dbe08
+
+### inserir user
+POST http://localhost:3000/user/
+content-type: application/json
+
+{
+    "name": "Jorge",
+    "endereco": "Rua Uruguai 723, Bairro Cruzeiro",
+    "saldo": 5,
+    "extrato": []
+}
+
+### depositar
+PUT  http://localhost:3000/user/deposito/de98ffde-e6e4-467b-8738-7e58920df431
+content-type: application/json
+
+{
+    "extrato": [{
+      "tipo": "depósito",
+      "valor": 150
+    }]
+}
+
+### retirar
+PUT  http://localhost:3000/user/retirada/374e1a76-dd09-41bd-8af4-b95ef4b0ebbd
+content-type: application/json
+
+{
+    "extrato": [{
+      "tipo": "retirada",
+      "valor": 15
+    }]
+}
+
+### deletar user
+delete http://localhost:3000/user/7db40d8e-5a05-4e84-837f-415d40d8bb37
+
+### Atualizar um usuario pelo ID
+PUT  http://localhost:3000/user/cf4cc276-3380-42f1-acfe-cb11dc99cdb0
+content-type: application/json
+
+{
+    "name": "Paulo",
+    "endereco": "Rua Paraguai 599, Bairro Central",
+    "saldo": 600,
+    "extrato": []
+}
